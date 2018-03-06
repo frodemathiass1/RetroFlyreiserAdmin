@@ -1,30 +1,17 @@
-Localhost:
-Opprett ny bruker for å logge inn på løsningen.
-(brukere kan ikke seedes pga problemer med å få salt i seperat kolonne i db)
-tips: bruk pepper istedet..
+School assignment for OsloMet - Storbyuniversitet for the course ITPE3200 - Webapplcations.
+This is the 2nd assignment in a series of developing modules and pages for a Flight booking system with.NET,using
+WebAPI and MVC like this one.  This assignment was graded with an B, and recieved good feedback for comprehensive testing, which is the reason why we decided to publish the code on Github. 
 
-Azure:
-URL: retroflyreiser2017.azurewebsites.net
+
+The webapplication "was" published on Azure but removed due to limites databases with student licences.
 
 Login:
-Brukernavn: Testbruker
-Passord: Test1234
-Alternativ: Opprett en bruker selv.
-
-Dbchangelogg - fulgt denne guiden:
-https://www.exceptionnotfound.net/entity-change-tracking-using-dbcontext-in-entity-framework-6/
-
+User: Testbruker
+PW: Test1234
+Alt: Register a new user.
 _____________________________
 Bugs (It's not a bug, it's a feature!):
 
-Ønsket funskjonalitet: Ending av postnr. Kan ikke endres pga PK.
-
-Problemer med validering fra modell, workaround med validering(required) i Razorview.
-
-Enhetstester på HomeController ikke utført pga mye merarbeid for få metoder som ikke utfører 
-noen operasjoner annet enn å liste ut data fra db. 
-Tilsvarende metoder som er brukt andre steder er testet.
-
-Forfattere:
-Frode Kristian Mathiassen (s30549)
-Thien Minh Truong (S161922)
+Authors:
+frodemathiass1
+Thien Minh Truong
