@@ -14,4 +14,4 @@ Bugs (It's not a bug, it's a feature!):
 
 Authors:
 frodemathiass1
-Thien Minh Truong
+ThienSama 
