@@ -1,0 +1,44 @@
+﻿@model List<RetroFlyreiser.Model.Flymaskin>
+
+
+<h2>Flymaskiner</h2>
+<p class="label-warning container">
+    N.B:
+    Flymaskiner som er tilegnet rute kan ikke slettes før rute er fjernet.<br />
+    Nye Flymaskiner må tilegnes unik Fly ID, f.eks: AA99 .
+</p>
+<p>
+    @Html.ActionLink("Legg til ny Flymaskin", "RegistrerFlymaskin", new { @class = "btn btn-primary" })
+</p>
+<div class="container">
+    <div class="col-lg-6">
+        <table class="table table-hover sortable">
+            <thead class="label-info">
+                <tr>
+                    <th> @Html.DisplayNameFor(model => model[0].FlyId)</th>
+                    <th> @Html.DisplayNameFor(model => model[0].Type) </th>
+                    <th> @Html.DisplayNameFor(model => model[0].Kapasitet) </th>
+                    <th><span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var flymaskin in Model)
+            {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => flymaskin.FlyId) </td>
+                        <td> @Html.DisplayFor(modelItem => flymaskin.Type) </td>
+                        <td> @Html.DisplayFor(modelItem => flymaskin.Kapasitet) </td>
+                        <td>
+                            @Html.ActionLink("Endre", "EndreFlymaskin", new { FlyId = flymaskin.FlyId }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Detaljer", "FlymaskinDetaljer", new { FlyId = flymaskin.FlyId }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Slett", "SlettFlymaskin", new { FlyId = flymaskin.FlyId }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+   
+
+

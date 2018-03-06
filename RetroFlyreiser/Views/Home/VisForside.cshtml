@@ -1,0 +1,61 @@
+﻿@using RetroFlyreiser.Model
+@{
+    ViewBag.Title = "VisForside";
+}
+
+<div class="jumbotron text-center animated slideInLeft" id="background">
+    <div id="jumboBox">
+        <h1 class="shadow">Velkommen til Retro Flyreiser</h1>
+        <h3>Vi er for tiden under intens utvikling. </h3>
+        <p>
+            I mellomtiden kan du sjekke ut våre destinasjoner i nedtrekkslisten. </br>
+            Spesielt interreserte kan opprette en ny bruker, logge inn og leke med databasen...
+        </p>
+        <div class="text-center">
+            <select class="form-control font-bigger" id="drop">
+                @foreach (var x in ViewBag.Flyplasser)
+                {
+                    <option value="@x.FlyplassKode" class="form-group-lg">
+                        @x.By  - (@x.FlyplassKode)
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+</div>
+
+<!--Dummy content boxes-->
+<div class="row">
+    <div class="animated slideInRight">
+        <div class="col-sm-3 boks-styling animated slideInLeft">
+            <h4>Sjekk inn online</h4>
+            <span class="glyphicon glyphicon-picture"></span>
+            <div class="boks-content"></div>
+        </div>
+        <div class="col-sm-3 boks-styling animated slideInLeft">
+            <h4>Er flyet i rute</h4>
+            <span class="glyphicon glyphicon-picture"></span>
+            <div class="boks-content"></div>
+        </div>
+        <div class="col-sm-6 boks-styling animated slideInLeft">
+            <h4>Tilbud og kampanjer</h4>
+            <span class="glyphicon glyphicon-picture"></span>
+            <div class="boks-content"></div>
+        </div>
+        <div class="col-sm-3 boks-styling animated slideInLeft">
+            <h4>Om Retro Flyreiser</h4>
+            <span class="glyphicon glyphicon-picture"></span>
+            <div class="boks-content"></div>
+        </div>
+        <div class="col-sm-6 boks-styling animated slideInRight">
+            <h4>Om våre destinasjoner</h4>
+            <span class="glyphicon glyphicon-picture"></span>
+            <div class="boks-content"></div>
+        </div>
+        <div class="col-sm-3 boks-styling">
+            <h4>Hjelp og kontakt</h4>
+            <span class="glyphicon glyphicon-picture animated slideInRight"></span>
+            <div class="boks-content"></div>
+        </div>
+    </div>
+</div>  

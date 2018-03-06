@@ -1,0 +1,48 @@
+﻿@model RetroFlyreiser.Model.Bestilling
+
+@{
+    ViewBag.Title = "SlettBestilling";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Slett Bestilling</h2>
+
+<h3>Er du sikker på at du vil slette Bestillingen?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> Bestilling ID </dt>
+        <dd> @Html.DisplayFor(model => model.Id) </dd>
+
+        <dt> Kunde </dt>
+        <dd> @Html.DisplayFor(model => model.Kunde.Etternavn), @Html.DisplayFor(model => model.Kunde.Fornavn) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Kunde.Epost) </dt>
+        <dd> @Html.DisplayFor(model => model.Kunde.Epost) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.ReiseFra) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.ReiseFra.By), @Html.DisplayFor(model => model.Rute.ReiseFra.FlyplassKode)  </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.ReiseTil) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.ReiseTil.By),@Html.DisplayFor(model => model.Rute.ReiseTil.FlyplassKode) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.Dato) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.Dato) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.Tid) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.Tid) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.Pris) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.Pris) </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Slett" class="btn btn-danger" />
+            <a href="/Bestilling/ListBestillinger" class="btn btn-primary">Tilbake til liste</a>
+        </div>
+    }
+</div>

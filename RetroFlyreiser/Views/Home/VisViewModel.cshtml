@@ -1,0 +1,217 @@
+﻿@using RetroFlyreiser.Model
+@model DbModel
+@{
+    ViewBag.Title = "DbModel";
+}
+
+<h2>Database</h2>
+<h3>Utskrift av hele databasen.</h3>
+<br />
+
+<div class="row">
+    <div class="col col-md-6">
+        <h4>Flymaskiner</h4>
+        <table class="table table-responsive table-hover table-striped sortable">
+            <thead class="label-info">
+                <tr>
+                    <th>FlyId</th>
+                    <th>Type</th>
+                    <th>Kapasistet</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Flymaskin f in Model.Flymaskiner)
+            {
+                    <tr>
+                        <td>@f.FlyId </td>
+                        <td>@f.Type</td>
+                        <td>@f.Kapasitet</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col col-md-6">
+        <h4>Flyplasser</h4>
+        <table class="table table-responsive table-hover table-striped sortable">
+            <thead class="label-info">
+                <tr>
+                    <th>FlyId</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Flyplass f in Model.Flyplasser)
+                {
+                    <tr>
+                        <td>@f.FlyplassKode </td>
+                        <td>@f.By</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div class="col col-md-12">
+        <h4>Kunder</h4>
+        <table class="table table-responsive table-hover table-striped sortable">
+            <thead class="label-info">
+                <tr>
+                    <th>Fornavn</th>
+                    <th>Etternavn</th>
+                    <th>Adresse</th>
+                    <th>Postnr</th>
+                    <th>Poststed</th>
+                    <th>Telefon</th>
+                    <th>Epost</th>
+                    <th>Aktiv</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Kunde k in Model.Kunder)
+                {
+                    <tr>
+                        <td>@k.Fornavn </td>
+                        <td>@k.Etternavn</td>
+                        <td>@k.Adresse</td>
+                        <td>@k.Poststed.Postnr</td>
+                        <td>@k.Poststed.Sted</td>
+                        <td>@k.Telefon</td>
+                        <td>@k.Epost</td>
+                        <td>@k.Aktiv</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>
+        <br />
+
+<div class="row">
+    <div class="col col-md-6">
+        <h4>Bruker</h4>
+        <table class="table table-responsive table-hover table-striped sortable">
+            <thead class="label-info">
+                <tr>
+                    <th> Brukernavn </th>
+                    <th> Passord</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DBBRUKER b in Model.Brukere)
+            {
+                    <tr>
+                        <td>@b.BRUKERNAVN </td>
+                        <td>**************</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+<div class="col col-md-6">
+    <h4>Poststed</h4>
+    <table class="table table-responsive table-hover table-striped sortable">
+        <thead class="label-info">
+            <tr>
+                <th>Postnr</th>
+                <th>Poststed</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Poststed p in Model.Poststeder)
+            {
+                <tr>
+                    <td>@p.Postnr </td>
+                    <td>@p.Sted</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    </div>
+    <br />
+    <h4>Ruter</h4>
+    <table class="table table-responsive table-hover table-striped sortable">
+        <thead class="label-info">
+            <tr>
+                <th> RuteId </th>
+                <th> Reise Fra</th>
+                <th> Reise Til </th>
+                <th> Tid </th>
+                <th> Dato </th>
+                <th> Reisetid </th>
+                <th> Kapasitet </th>
+                <th> Pris </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Rute r in Model.Ruter)
+            {
+                <tr>
+                    <td>@r.RuteId </td>
+                    <td>@r.ReiseFra.By </td>
+                    <td>@r.ReiseTil.By </td>
+                    <td>@r.Tid </td>
+                    <td>@r.Dato </td>
+                    <td>@r.ReiseTid </td>
+                    <td>@r.Flymaskin.Kapasitet </td>
+                    <td>@r.Pris </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <h4>Bestilling</h4>
+    <table class="table table-responsive table-hover table-striped sortable">
+        <thead class="label-info">
+            <tr>
+                <th> BId  </th>
+                <th> Navn </th>
+                <th> Adresse </th>
+                <th> Poststed </th>
+                <th> Epost </th>
+                <th> Telefon </th>
+                <th> Rute  </th>
+                <th> Fra</th>
+                <th> Til </th>
+                <th> Tid </th>
+                <th> Dato</th>
+                <th> Reisetid </th>
+                <th> Kapasitet </th>
+                <th> Pris </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Bestilling b in Model.Bestillinger)
+            {
+                <tr>
+                    <td>@b.Id </td>
+                    <td>@b.Kunde.Etternavn, @b.Kunde.Fornavn </td>
+                    <td>@b.Kunde.Adresse </td>
+                    <td>@b.Kunde.Poststed.Postnr, @b.Kunde.Poststed.Sted </td>
+                    <td>@b.Kunde.Epost </td>
+                    <td>@b.Kunde.Telefon </td>
+                    <td>@b.Rute.RuteId </td>
+                    <td>@b.Rute.ReiseFra.By</td>
+                    <td>@b.Rute.ReiseTil.By</td>
+                    <td>@b.Rute.Tid</td>
+                    <td>@b.Rute.Dato </td>
+                    <td>@b.Rute.ReiseTid </td>
+                    <td>@b.Rute.Flymaskin.Kapasitet </td>
+                    <td>@b.Rute.Pris </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+

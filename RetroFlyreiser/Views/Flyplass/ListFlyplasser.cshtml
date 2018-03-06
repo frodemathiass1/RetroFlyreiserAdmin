@@ -1,0 +1,38 @@
+﻿@model List<RetroFlyreiser.Model.Flyplass>
+
+
+<h2>Flyplasser</h2>
+<p class="label-warning container">
+    N.B: Flyplasser som er tilknyttet Rute kan ikke slettes, før rute er fjernet.<br />
+    Nye Flyplasser må tilegnes unik Flyplass Kode, f.eks: TST .
+</p>
+<p>
+    @Html.ActionLink("Legg til", "RegistrerFlyplass")
+</p>
+<div class="container">
+    <div class="col-lg-6">
+        <table class="table table-responsive table-hover sortable">
+            <thead class="label-info">
+                <tr>
+                    <th> @Html.LabelFor(model => model[0].FlyplassKode) </th>
+                    <th> @Html.LabelFor(model => model[0].By) </th>
+                    <th><span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var flyplass in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => flyplass.FlyplassKode)</td>
+                        <td>@Html.DisplayFor(modelItem => flyplass.By)</td>
+                        <td>
+                            @Html.ActionLink("Endre", "EndreFlyplass", new { FlyplassKode = flyplass.FlyplassKode }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Detaljer", "FlyplassDetaljer", new { FlyplassKode = flyplass.FlyplassKode }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Slett", "SlettFlyplass", new { FlyplassKode = flyplass.FlyplassKode }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>

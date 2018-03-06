@@ -1,0 +1,37 @@
+﻿@model RetroFlyreiser.Model.Rute
+
+@{
+    ViewBag.Title = "RuteDetaljer";
+}
+
+<h2>Rute Detaljer</h2>
+<div>
+    <h4>Rute</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.RuteId)</dt>
+        <dd> @Html.DisplayFor(model => model.ReiseFra.By) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.ReiseTil.By) </dt>
+        <dd> @Html.DisplayFor(model => model.ReiseTil.By) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Tid)</dt>
+        <dd> @Html.DisplayFor(model => model.Tid) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Dato) </dt>
+        <dd> @Html.DisplayFor(model => model.Dato) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.ReiseTid) </dt>
+        <dd> @Html.DisplayFor(model => model.ReiseTid) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Flymaskin.Kapasitet) </dt>
+        <dd> @Html.DisplayFor(model => model.Flymaskin.Kapasitet) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Pris) </dt>
+        <dd> @Html.DisplayFor(model => model.Pris) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Endre", "EndreRute", new { RuteId = Model.RuteId }) |
+    @Html.ActionLink("Tilbake til liste", "ListRuter")
+</p>

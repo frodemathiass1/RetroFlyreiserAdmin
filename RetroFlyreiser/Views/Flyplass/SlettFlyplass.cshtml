@@ -1,0 +1,28 @@
+﻿@model RetroFlyreiser.Model.Flyplass
+
+@{
+    ViewBag.Title = "SlettFlyplass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Slett Flyplass</h2>
+
+<h3>Er du sikker på at du vil slette Flyplassen?</h3>
+<div>
+    <h4>Flyplass</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.FlyplassKode) </dt>
+        <dd> @Html.DisplayFor(model => model.FlyplassKode) </dd>
+        <dt> @Html.DisplayNameFor(model => model.By) </dt>
+        <dd> @Html.DisplayFor(model => model.By) </dd>
+    </dl>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Slett" class="btn btn-danger" /> 
+            <a href="/Flyplass/ListFlyplasser" class="btn btn-primary">Tilbake til liste</a>
+        </div>
+    }
+</div>

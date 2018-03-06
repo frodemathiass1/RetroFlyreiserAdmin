@@ -1,0 +1,72 @@
+﻿@model List<RetroFlyreiser.Model.Bestilling>
+
+@{
+    ViewBag.Title = "ListBestillinger";
+}
+
+<h2>Bestillinger</h2>
+
+<p class="label-warning container">
+    N.B:
+    Bestillinger som har tilegnet rute/kunde kan ikke slettes før data er frigjort.<br />
+    Nye bestillinger tilegnes automatisk en ny unik bestillings ID<br />
+
+    P.S. Problemer med å få registrert Bestilling i View. All data seedes....
+</p>
+<p>
+    @Html.ActionLink("Legg til ny Bestilling", "RegistrerBestilling")
+</p>
+<div class="container">
+    <div class="col-lg-12">
+        <table class="table sortable table-responsive table-hover">
+            <thead class="label-info">
+                <tr>                   
+                    <th> @Html.LabelFor(model => model[0].Id) </th>
+                    <th> @Html.LabelFor(model => model[0].Kunde.Fornavn) </th>
+                    <th> @Html.LabelFor(model => model[0].Kunde.Etternavn) </th>
+                  @*<th> @Html.LabelFor(model => model[0].Kunde.Adresse) </th>
+                    <th> @Html.LabelFor(model => model[0].Kunde.Poststed.Postnr) </th>
+                    <th> @Html.LabelFor(model => model[0].Kunde.Poststed.Sted) </th>
+                    <th> @Html.LabelFor(model => model[0].Kunde.Telefon) </th>*@
+                    <th> @Html.LabelFor(model => model[0].Kunde.Epost) </th>
+                    <th> @Html.LabelFor(model => model[0].Rute.RuteId) </th>
+                    <th> @Html.LabelFor(model => model[0].Rute.ReiseFra)  </th>
+                    <th> @Html.LabelFor(model => model[0].Rute.ReiseTil)  </th>
+                    <th> @Html.LabelFor(model => model[0].Rute.Dato) </th>
+                    <th> @Html.LabelFor(model => model[0].Rute.Tid) </th>
+                    <th> @Html.LabelFor(model => model[0].Rute.ReiseTid) </th>
+                    <th> @Html.LabelFor(model => model[0].Rute.Pris) </th>
+                    <th><span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var bestilling in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Id) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Kunde.Fornavn) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Kunde.Etternavn) </td>
+                      @*<td>@Html.DisplayFor(modelItem => bestilling.Kunde.Adresse) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Kunde.Poststed.Postnr) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Kunde.Poststed.Sted) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Kunde.Telefon) </td>*@
+                        <td>@Html.DisplayFor(modelItem => bestilling.Kunde.Epost) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Rute.RuteId) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Rute.ReiseFra.By) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Rute.ReiseTil.By) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Rute.Dato) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Rute.Tid) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Rute.ReiseTid) </td>
+                        <td>@Html.DisplayFor(modelItem => bestilling.Rute.Pris) </td>
+                        <td>                          
+                            @Html.ActionLink("Endre", "EndreBestilling", new { Id = bestilling.Id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Detaljer", "BestillingDetaljer", new { Id = bestilling.Id }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Slett", "SlettBestilling", new { Id = bestilling.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>
+

@@ -1,0 +1,40 @@
+﻿@model RetroFlyreiser.Model.Rute
+
+@{
+    ViewBag.Title = "SlettRute";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Slett Rute</h2>
+
+<h3>Er du sikker på at du vil slette ruten?</h3>
+<div>
+    <h4>Rute</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.RuteId)</dt>
+        <dd> @Html.DisplayFor(model => model.RuteId)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.ReiseFra)</dt>
+        <dd> @Html.DisplayFor(model => model.ReiseFra.FlyplassKode), @Html.DisplayFor(model => model.ReiseFra.By)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.ReiseTil)</dt>
+        <dd> @Html.DisplayFor(model => model.ReiseTil.FlyplassKode), @Html.DisplayFor(model => model.ReiseTil.By)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Dato)</dt>
+        <dd> @Html.DisplayFor(model => model.Dato)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Tid)</dt>
+        <dd> @Html.DisplayFor(model => model.Tid)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Pris)</dt>
+        <dd> @Html.DisplayFor(model => model.Pris)</dd>
+    </dl>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Slett" class="btn btn-danger" />
+            <a href="/Rute/ListRuter" class="btn btn-primary">Tilbake til liste</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,57 @@
+﻿@model List<RetroFlyreiser.Model.Rute>
+
+@{
+    ViewBag.Title = "ListRuter";
+}
+
+<h2>Ruter</h2>
+<p class="label-warning container">
+    N.B:
+    Ruter som er bestilt kan ikke slettes før Bestilling er fjernet.<br />
+    Nye Ruter må tilegnes unik Rute ID, f.eks: OSLKRS999 .
+</p>
+<p>
+    @Html.ActionLink("Legg til", "RegistrerRute")
+</p>
+<div class="container">
+    <div class="col-lg-12">
+        <table class="table sortable table-responsive table-hover">
+            <thead class="label-info">
+                <tr>
+                    <th> @Html.LabelFor(model => model[0].RuteId) </th>
+                    <th> @Html.LabelFor(model => model[0].ReiseFra) </th>
+                    <th> @Html.LabelFor(model => model[0].ReiseTil) </th>
+                    <th> @Html.LabelFor(model => model[0].Tid) </th>
+                    <th> @Html.LabelFor(model => model[0].Dato) </th>
+                    <th> @Html.LabelFor(model => model[0].ReiseTid) </th>
+                    <th> @Html.LabelFor(model => model[0].Flymaskin.Kapasitet) </th>
+                    <th> @Html.LabelFor(model => model[0].Pris) </th>
+                    <th><span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var rute in Model)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => rute.RuteId) </td>
+                        <td> @Html.DisplayFor(modelItem => rute.ReiseFra.By) (@Html.DisplayFor(modelItem => rute.ReiseFra.FlyplassKode)) </td>
+                        <td> @Html.DisplayFor(modelItem => rute.ReiseTil.By) (@Html.DisplayFor(modelItem => rute.ReiseFra.FlyplassKode)) </td>
+                        <td> @Html.DisplayFor(modelItem => rute.Tid) </td>
+                        <td> @Html.DisplayFor(modelItem => rute.Dato) </td>
+                        <td> @Html.DisplayFor(modelItem => rute.ReiseTid) </td>
+                        <td> @Html.DisplayFor(modelItem => rute.Flymaskin.Kapasitet)</td>
+                        <td> @Html.DisplayFor(modelItem => rute.Pris) </td>
+                        <td>
+                            @Html.ActionLink("Endre", "EndreRute", new { RuteId = rute.RuteId }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Detaljer", "RuteDetaljer", new { RuteId = rute.RuteId }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Slett", "SlettRute", new { RuteId = rute.RuteId }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+

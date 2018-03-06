@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Feil</h2>
+
+<div class="jumbotron">
+    <div class="container">
+        <h3>Kan ikke utføre handling mot database</h3>      
+        <p>
+            P.S. Hvis du forsøker å slette eller endre data:<br />
+            Rader med data som har tilknyttning til andre tabeller kan ikke slettes/endres før data er frigjort.
+        </p>
+        <br />
+        <h5>Forsøk en annen handling, eller finn på noe annet.....</h5>
+    </div>
+    <a href="/Home/Index" class="btn btn-primary">Tilbake til hovedside</a>
+</div>
+
+
+

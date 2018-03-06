@@ -1,0 +1,17 @@
+﻿@model RetroFlyreiser.Model.Flyplass
+
+<div>
+    <h4>Flyplass Detaljer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.FlyplassKode) </dt>
+        <dt> @Html.DisplayNameFor(model => model.By) </dt>
+
+        <dd> @Html.DisplayFor(model => model.FlyplassKode) </dd>
+        <dd> @Html.DisplayFor(model => model.By) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Endre", "EndreFlyplass", new { FlyplassKode = Model.FlyplassKode }) 
+    @Html.ActionLink("Tilbake til liste", "ListFlyplasser")
+</p>

@@ -1,0 +1,46 @@
+﻿@model List<RetroFlyreiser.Model.Poststed>
+
+@{
+    ViewBag.Title = "ListPoststeder";
+}
+
+<h2>Poststeder</h2>
+<p class="label-warning container">
+    N.B:
+    Poststeder som er tilegnet kunde kan ikke slettes før kunde er fjernet.<br />
+    Nye poststeder må tilegnes unikt postnummer, f.eks: 9999
+</p>
+<p>
+    @Html.ActionLink("Legg til poststed", "RegistrerPoststed")
+</p>
+<div class="container">
+    <div class="col-lg-6">
+        <table class="table table-hover table-responsive sortable">
+            <thead class="label-info">
+                <tr>
+                    <th> @Html.DisplayNameFor(model => model[0].Postnr) </th>
+                    <th>@Html.DisplayNameFor(model => model[0].Sted) </th>          
+                    <th><span class="glyphicon glyphicon-sort"></span> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Postnr)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sted)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Endre", "EndrePoststed", new { Postnr = item.Postnr }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Detaljer", "PoststedDetaljer", new { Postnr = item.Postnr }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Slett", "SlettPoststed", new { Postnr = item.Postnr }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>

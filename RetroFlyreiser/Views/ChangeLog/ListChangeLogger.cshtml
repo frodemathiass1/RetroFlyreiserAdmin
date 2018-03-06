@@ -1,0 +1,41 @@
+﻿@model List<RetroFlyreiser.Model.ChangeLog>
+
+@{
+    ViewBag.Title = "ListChangeLogger";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Database Changelog</h2>
+<br />
+<div class="container">
+    <div class="col-lg-12">
+        <table class="table sortable table-responsive table-hover">
+            <thead class="label-info">
+              <tr>
+                <th> @Html.DisplayNameFor(model => model[0].EntityName) </th>
+                <th> @Html.DisplayNameFor(model => model[0].PropertyName) </th>
+                <th> @Html.DisplayNameFor(model => model[0].PrimaryKeyValue) </th>
+                <th> @Html.DisplayNameFor(model => model[0].OldValue) </th>
+                <th> @Html.DisplayNameFor(model => model[0].NewValue) </th>
+                <th> @Html.DisplayNameFor(model => model[0].DateChanged) </th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.EntityName)</td>
+                    <td> @Html.DisplayFor(modelItem => item.PropertyName) </td>
+                    <td> @Html.DisplayFor(modelItem => item.PrimaryKeyValue) </td>
+                    <td> @Html.DisplayFor(modelItem => item.OldValue) </td>
+                    <td> @Html.DisplayFor(modelItem => item.NewValue) </td>
+                    <td> @Html.DisplayFor(modelItem => item.DateChanged) </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+ </div>
+
+<a href="/Home/Index" class="btn btn-primary">Tilbake til hovedside</a>

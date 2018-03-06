@@ -1,0 +1,40 @@
+﻿@model RetroFlyreiser.Model.Kunde
+
+@{
+    ViewBag.Title = "KundeDetaljer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kunde Detaljer</h2>
+
+<div>
+    <h4>Kunde</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt> @Html.DisplayNameFor(model => model.Fornavn) </dt>
+        <dd> @Html.DisplayFor(model => model.Fornavn) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Etternavn) </dt>
+        <dd> @Html.DisplayFor(model => model.Etternavn) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Adresse) </dt>
+        <dd> @Html.DisplayFor(model => model.Adresse) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Poststed.Postnr) </dt>
+        <dd> @Html.DisplayFor(model => model.Poststed.Sted) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Telefon) </dt>
+        <dd> @Html.DisplayFor(model => model.Telefon) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Epost) </dt>
+        <dd> @Html.DisplayFor(model => model.Epost) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Aktiv) </dt>
+        <dd> @Html.DisplayFor(model => model.Aktiv) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Endre", "EndreKunde", new { Epost = Model.Epost }) |
+    @Html.ActionLink("Tilbake til liste", "ListKunder")
+</p>

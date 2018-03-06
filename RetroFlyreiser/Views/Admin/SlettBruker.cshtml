@@ -1,0 +1,29 @@
+﻿@model RetroFlyreiser.Model.DBBRUKER
+
+@{
+    ViewBag.Title = "SlettBruker";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Slett Bruker</h2>
+
+<h3>Er du sikker på at du vil slette Brukeren?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.BRUKERNAVN) </dt>
+        <dd> @Html.DisplayFor(model => model.BRUKERNAVN) </dd>
+        <dt> @Html.DisplayNameFor(model => model.PASSORD) </dt>
+        <dd> @Html.DisplayFor(model => model.PASSORD) </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Slett" class="btn btn-danger" />
+            <a href="/Admin/ListBrukere" class="btn btn-primary">Tilbake til liste</a>
+        </div>
+    }
+</div>

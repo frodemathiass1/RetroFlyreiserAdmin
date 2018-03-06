@@ -1,0 +1,22 @@
+﻿@model RetroFlyreiser.Model.DBBRUKER
+
+@{
+    ViewBag.Title = "BrukerDetaljer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bruker Detaljer</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.BRUKERNAVN)</dt>
+        <dt> @Html.DisplayNameFor(model => model.PASSORD)</dt>
+
+        <dd> @Html.DisplayFor(model => model.BRUKERNAVN) </dd>
+        <dd> @Html.DisplayFor(model => model.PASSORD) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Tilbake til liste", "ListBrukere")
+</p>

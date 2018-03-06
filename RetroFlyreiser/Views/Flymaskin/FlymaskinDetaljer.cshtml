@@ -1,0 +1,25 @@
+﻿@model RetroFlyreiser.Model.Flymaskin
+
+@{
+    ViewBag.Title = "FlymaskinDetaljer";
+}
+
+<h2>Flymaskin Detaljer</h2>
+<div>
+    <h4>Flymaskin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.FlyId) </dt>
+        <dd> @Html.DisplayFor(model => model.FlyId) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Type) </dt>
+        <dd> @Html.DisplayFor(model => model.Type) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Kapasitet) </dt>
+        <dd> @Html.DisplayFor(model => model.Kapasitet) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Endre", "EndreFlymaskin", new { FlyId = Model.FlyId }) 
+    @Html.ActionLink("Tilbake til liste", "ListFlymaskiner")
+</p>

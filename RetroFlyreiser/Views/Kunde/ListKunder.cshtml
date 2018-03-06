@@ -1,0 +1,93 @@
+﻿@model List<RetroFlyreiser.Model.Kunde>
+
+<h2>Kunder</h2>
+<p class="label-warning container">
+    N.B:
+    Kunder som er tilegnet bestilling kan ikke slettes før bestilling er fjernet.<br />
+    Nye junder må tilegnes en unik E-post adresse ID, f.eks: bruker[at]flyreiser.no <br />
+    Kunder kan ikke slettes fra databasen, de kan kun aktiveres/deaktiveres for enklere gjenopprettelse av konto
+</p>
+<p>
+    @Html.ActionLink("Legg til", "RegistrerKunde")
+</p>
+<div class="container">
+    <div class="col-lg-12">
+        <h4>Aktive kunder</h4>
+        <table class="table table-responsive table-hover sortable">
+            <thead class="label-info">
+                <tr>
+                    <th> @Html.LabelFor(model => model[0].Fornavn) </th>
+                    <th> @Html.LabelFor(model => model[0].Etternavn) </th>
+                    <th> @Html.LabelFor(model => model[0].Adresse) </th>
+                    <th> @Html.LabelFor(model => model[0].Poststed) </th>
+                    <th> @Html.LabelFor(model => model[0].Poststed.Sted) </th>
+                    <th> @Html.LabelFor(model => model[0].Telefon) </th>
+                    <th> @Html.LabelFor(model => model[0].Epost) </th>
+                    <th><span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var kunde in Model)
+                {
+                    if (kunde.Aktiv == true)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => kunde.Fornavn) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Etternavn) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Adresse) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Poststed.Postnr) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Poststed.Sted) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Telefon) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Epost) </td>
+                            <td>
+                                @Html.ActionLink("Endre/Deaktiver", "EndreKunde", new { Epost = kunde.Epost }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Details", "KundeDetaljer", new { Epost = kunde.Epost }, new { @class = "btn btn-success" })
+                            </td>
+                        </tr>
+                    }
+                } 
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="col-lg-12">
+        <h4>Deaktiverte kunder</h4>
+        <table class="table table-responsive table-hover sortable">
+            <thead class="label-info">
+                <tr>
+                    <th> @Html.LabelFor(model => model[0].Fornavn) </th>
+                    <th> @Html.LabelFor(model => model[0].Etternavn) </th>
+                    <th> @Html.LabelFor(model => model[0].Adresse) </th>
+                    <th> @Html.LabelFor(model => model[0].Poststed.Postnr) </th>
+                    <th> @Html.LabelFor(model => model[0].Poststed.Sted) </th>
+                    <th> @Html.LabelFor(model => model[0].Telefon) </th>
+                    <th> @Html.LabelFor(model => model[0].Epost) </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var kunde in Model)
+                {
+                    if (kunde.Aktiv == false)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => kunde.Fornavn) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Etternavn) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Adresse) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Poststed.Postnr) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Poststed.Sted) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Telefon) </td>
+                            <td> @Html.DisplayFor(modelItem => kunde.Epost) </td>
+                            <td>
+                                @Html.ActionLink("Endre/Aktiver", "EndreKunde", new { Epost = kunde.Epost }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Details", "KundeDetaljer", new { Epost = kunde.Epost }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Slett", "SlettKunde", new { Epost = kunde.Epost }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                } 
+            </tbody>
+        </table>
+    </div>
+</div>

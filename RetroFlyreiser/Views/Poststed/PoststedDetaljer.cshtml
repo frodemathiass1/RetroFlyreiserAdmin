@@ -1,0 +1,22 @@
+﻿@model RetroFlyreiser.Model.Poststed
+
+@{
+    ViewBag.Title = "PoststedDetaljer";
+}
+
+<h2>Poststed Detaljer</h2>
+<div>
+    <h4>Poststed</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.Postnr)</dt>
+        <dt> @Html.DisplayNameFor(model => model.Sted)</dt>
+
+        <dd> @Html.DisplayFor(model => model.Postnr) </dd>
+        <dd> @Html.DisplayFor(model => model.Sted) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Endre", "EndrePoststed", new { Postnr = Model.Postnr }) 
+    @Html.ActionLink("Tilbake til liste", "ListPoststeder")
+</p>

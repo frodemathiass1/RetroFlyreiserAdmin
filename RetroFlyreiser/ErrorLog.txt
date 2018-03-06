@@ -1,0 +1,63 @@
+***Error Logging*************
+*******************************Start25.10.2017 23.23.52
+Error Message:An error occurred while updating the entries. See the inner exception for details.
+Stack Trace:   ved System.Data.Entity.Internal.InternalContext.SaveChanges()
+   ved System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   ved System.Data.Entity.DbContext.SaveChanges()
+   ved RetroFlyreiser.DAL.RetroDb.SaveChanges() i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\RetroDb.cs:linje 98
+   ved RetroFlyreiser.DAL.FlyplassDAL.slett(String FlyplassKode) i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\FlyplassDAL.cs:linje 36
+*******************************End 25.10.2017 23.23.52
+***Error Logging*************
+*******************************Start25.10.2017 23.28.42
+Error Message:An error occurred while updating the entries. See the inner exception for details.
+Stack Trace:   ved System.Data.Entity.Internal.InternalContext.SaveChanges()
+   ved System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   ved System.Data.Entity.DbContext.SaveChanges()
+   ved RetroFlyreiser.DAL.RetroDb.SaveChanges() i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\RetroDb.cs:linje 98
+   ved RetroFlyreiser.DAL.FlyplassDAL.slett(String FlyplassKode) i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\FlyplassDAL.cs:linje 36
+*******************************End 25.10.2017 23.29.57
+***Error Logging*************
+*******************************Start25.10.2017 23.35.55
+Error Message:An error occurred while updating the entries. See the inner exception for details.
+Stack Trace:   ved System.Data.Entity.Internal.InternalContext.SaveChanges()
+   ved System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   ved System.Data.Entity.DbContext.SaveChanges()
+   ved RetroFlyreiser.DAL.RetroDb.SaveChanges() i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\RetroDb.cs:linje 98
+   ved RetroFlyreiser.DAL.FlyplassDAL.slett(String FlyplassKode) i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\FlyplassDAL.cs:linje 36
+*******************************End 25.10.2017 23.35.55
+***Error Logging*************
+*******************************Start25.10.2017 23.37.51
+Error Message:An error occurred while updating the entries. See the inner exception for details.
+Stack Trace:   ved System.Data.Entity.Internal.InternalContext.SaveChanges()
+   ved System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   ved System.Data.Entity.DbContext.SaveChanges()
+   ved RetroFlyreiser.DAL.RetroDb.SaveChanges() i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\RetroDb.cs:linje 98
+   ved RetroFlyreiser.DAL.FlyplassDAL.slett(String FlyplassKode) i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\FlyplassDAL.cs:linje 36
+*******************************End 25.10.2017 23.37.54
+***Error Logging*************
+*******************************Start25.10.2017 23.40.23
+Error Message:An error occurred while updating the entries. See the inner exception for details.
+Stack Trace:   ved System.Data.Entity.Internal.InternalContext.SaveChanges()
+   ved System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   ved System.Data.Entity.DbContext.SaveChanges()
+   ved RetroFlyreiser.DAL.RetroDb.SaveChanges() i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\RetroDb.cs:linje 98
+   ved RetroFlyreiser.DAL.FlyplassDAL.slett(String FlyplassKode) i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\FlyplassDAL.cs:linje 36
+*******************************End 25.10.2017 23.40.23
+***Error Logging*************
+*******************************Start25.10.2017 23.41.56
+Error Message:An error occurred while updating the entries. See the inner exception for details.
+Stack Trace:   ved System.Data.Entity.Internal.InternalContext.SaveChanges()
+   ved System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   ved System.Data.Entity.DbContext.SaveChanges()
+   ved RetroFlyreiser.DAL.RetroDb.SaveChanges() i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\RetroDb.cs:linje 98
+   ved RetroFlyreiser.DAL.FlyplassDAL.slett(String FlyplassKode) i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\FlyplassDAL.cs:linje 36
+*******************************End 25.10.2017 23.41.56
+***Error Logging*************
+*******************************Start25.10.2017 23.43.12
+Error Message:An error occurred while updating the entries. See the inner exception for details.
+Stack Trace:   ved System.Data.Entity.Internal.InternalContext.SaveChanges()
+   ved System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   ved System.Data.Entity.DbContext.SaveChanges()
+   ved RetroFlyreiser.DAL.RetroDb.SaveChanges() i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\RetroDb.cs:linje 98
+   ved RetroFlyreiser.DAL.FlyplassDAL.slett(String FlyplassKode) i C:\Users\frode\Documents\#Anvendt Datateknologi\5.Semester\Webapplikasjoner\VisualStudioProsjekter\RetroFlyreiser\DAL\FlyplassDAL.cs:linje 36
+*******************************End 25.10.2017 23.43.12

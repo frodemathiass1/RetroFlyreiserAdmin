@@ -1,0 +1,41 @@
+﻿@model RetroFlyreiser.Model.Kunde
+
+@{
+    ViewBag.Title = "SlettKunde";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Slett Kunde</h2>
+
+<h3>Er du sikker på at du vil slette kunden?</h3>
+<div>
+    <h4>Kunde</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.Fornavn)</dt>
+        <dd> @Html.DisplayFor(model => model.Fornavn) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Etternavn) </dt>
+        <dd> @Html.DisplayFor(model => model.Etternavn) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Adresse) </dt>
+        <dd> @Html.DisplayFor(model => model.Adresse) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Poststed) </dt>
+        <dd> @Html.DisplayFor(model => model.Poststed.Postnr),@Html.DisplayFor(model => model.Poststed.Sted) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Telefon) </dt>
+        <dd> @Html.DisplayFor(model => model.Telefon) </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Slett" class="btn btn-danger" />
+            <a href="/Kunde/ListKunder" class="btn btn-primary">Tilbake til liste</a>
+        </div>
+    }
+</div>

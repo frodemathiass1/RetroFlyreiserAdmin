@@ -1,0 +1,39 @@
+﻿<div class="custom-navbar">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div>
+                @Html.ActionLink("Retro Flyreiser", "VisForside", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+        </div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">   
+            <ul class="nav navbar-nav divider">
+                <li>@Html.ActionLink("Index", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>     
+                <li>@Html.ActionLink("Changelog", "ListChangeLogger", "ChangeLog", new { area = "" }, new { @class = "navbar-brand" })</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Database <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("Vis all data", "VisViewModel", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Ruter", "ListRuter", "Rute", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Flyplasser", "ListFlyplasser", "Flyplass", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Flymaskiner", "ListFlymaskiner", "Flymaskin", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Kunder", "ListKunder", "Kunde", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Poststeder", "ListPoststeder", "Poststed", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Bestillinger", "ListBestillinger", "Bestilling", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Brukere", "ListBrukere", "Admin", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    </ul>
+                </li>
+            </ul>  
+            <ul class="nav navbar-right admin divider">
+                <li><a href="/Admin/LoggUt" class="navbar-brand font" title="Logg ut" id="bruker-ikon">Logg ut <span class="glyphicon glypphion-log-out"></span></a></li>
+            </ul>
+        </div>
+
+    </nav>
+</div>
+

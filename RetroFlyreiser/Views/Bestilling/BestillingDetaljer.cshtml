@@ -1,0 +1,51 @@
+﻿@model RetroFlyreiser.Model.Bestilling
+
+@{
+    ViewBag.Title = "BestillingDetaljer";
+}
+
+<h2>Bestilling</h2>
+
+<div>
+    <hr />
+    <h4>Reise opplysninger</h4>
+    <dl class="dl-horizontal">
+        
+        <dt> @Html.DisplayNameFor(model => model.Id) </dt>
+        <dd> @Html.DisplayFor(model => model.Id)  </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.ReiseFra.By) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.ReiseFra.By)  </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.ReiseTil.By) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.ReiseTil.By) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.Dato) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.Dato) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.Tid) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.Tid) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.ReiseTid) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.ReiseTid) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Rute.Pris) </dt>
+        <dd> @Html.DisplayFor(model => model.Rute.Pris) </dd>
+    </dl>
+    <h4>Kunde opplysninger</h4>
+    <dl class="dl-horizontal">
+
+        <dt> @Html.DisplayNameFor(model => model.Kunde.Fornavn) </dt>
+        <dd> @Html.DisplayFor(model => model.Kunde.Fornavn) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Kunde.Etternavn) </dt>
+        <dd> @Html.DisplayFor(model => model.Kunde.Etternavn) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Kunde.Epost) </dt>
+        <dd> @Html.DisplayFor(model => model.Kunde.Epost) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Endre", "EndreBestilling", new { Id = Model.Id }) |
+    @Html.ActionLink("Tilbake til Bestillinger", "ListBestillinger")
+</p>

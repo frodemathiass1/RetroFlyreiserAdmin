@@ -1,0 +1,28 @@
+﻿@model RetroFlyreiser.Model.Poststed
+
+@{
+    ViewBag.Title = "SlettPoststed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Slett Poststed</h2>
+
+<h3>Er du sikker på at du vil slette Poststedet?</h3>
+<div>
+    <h4>Poststed</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.Postnr) </dt>
+        <dd>  @Html.DisplayFor(model => model.Postnr)</dd>
+
+        <dt> @Html.DisplayNameFor(model => model.Sted) </dt>
+        <dd>  @Html.DisplayFor(model => model.Sted)</dd>
+    </dl>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Slett" class="btn btn-danger" />
+            <a href="/Poststed/ListPoststeder" class="btn btn-primary">Tilbake til liste</a>
+        </div>
+    }
+</div>
